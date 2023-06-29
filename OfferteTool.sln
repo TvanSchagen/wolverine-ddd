@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wolverine", "OfferteTool\OfferteTool.csproj", "{DE97E4CA-CFE8-4767-926D-C544019B0196}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{EAAEE066-B030-4DC5-9EEF-F7F69E50CD78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrmTool", "CrmTool\CrmTool.csproj", "{442074DC-7CD1-4984-ACDB-4E021FAFA9D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE97E4CA-CFE8-4767-926D-C544019B0196}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE97E4CA-CFE8-4767-926D-C544019B0196}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE97E4CA-CFE8-4767-926D-C544019B0196}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE97E4CA-CFE8-4767-926D-C544019B0196}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAAEE066-B030-4DC5-9EEF-F7F69E50CD78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAAEE066-B030-4DC5-9EEF-F7F69E50CD78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAAEE066-B030-4DC5-9EEF-F7F69E50CD78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAAEE066-B030-4DC5-9EEF-F7F69E50CD78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{442074DC-7CD1-4984-ACDB-4E021FAFA9D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{442074DC-7CD1-4984-ACDB-4E021FAFA9D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{442074DC-7CD1-4984-ACDB-4E021FAFA9D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{442074DC-7CD1-4984-ACDB-4E021FAFA9D4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
