@@ -62,7 +62,7 @@ app.MapWolverineEndpoints(opts =>
     opts.UseFluentValidationProblemDetailMiddleware());
 
 var context = app.Services.GetRequiredService<OfferContext>();
-await context.Database.EnsureCreatedAsync();
+//await context.Database.EnsureCreatedAsync();
 await context.Database.MigrateAsync();
 
 await app.RunAsync();
