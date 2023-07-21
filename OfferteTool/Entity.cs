@@ -4,10 +4,7 @@ public abstract class Entity
 {
     private readonly List<object> _domainEvents = new();
 
-    protected void AddDomainEvent(object @event)
-    {
-        _domainEvents.Add(@event);
-    }
+    protected void AddDomainEvent(object @event) => _domainEvents.Add(@event);
 
-    public List<object> GetDomainEvents() => _domainEvents;
+    public IReadOnlyCollection<object> GetDomainEvents() => _domainEvents;
 }
