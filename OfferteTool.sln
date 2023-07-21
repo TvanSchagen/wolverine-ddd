@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wolverine", "OfferteTool\OfferteTool.csproj", "{DE97E4CA-CFE8-4767-926D-C544019B0196}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfferTool", "OfferTool\OfferTool.csproj", "{DE97E4CA-CFE8-4767-926D-C544019B0196}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{EAAEE066-B030-4DC5-9EEF-F7F69E50CD78}"
 EndProject

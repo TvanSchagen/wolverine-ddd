@@ -6,9 +6,9 @@ var builder = Host.CreateDefaultBuilder(args);
 await builder
     .UseWolverine(opts =>
     {
-        opts.ListenToRabbitQueue("offertes");
+        opts.ListenToRabbitQueue("offers");
         opts.UseRabbitMq()
-            .DeclareExchange("offertes", ex => ex.BindQueue("offertes"))
+            .DeclareExchange("offers", ex => ex.BindQueue("offers"))
             .AutoProvision();
     })
     .Build()

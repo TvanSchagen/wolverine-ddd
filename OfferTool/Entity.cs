@@ -1,4 +1,4 @@
-﻿namespace OfferteTool;
+﻿namespace OfferTool;
 
 public abstract class Entity
 {

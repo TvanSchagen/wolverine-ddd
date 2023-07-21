@@ -1,2 +1,2 @@
-$name = Read-Host "Geef de migratie een naam"
+$name = Read-Host "Migration name: "
 dotnet ef migrations add --project $PSScriptRoot --output-dir "$PSScriptRoot/Migrations" $name -- "Data Source=localhost;Initial Catalog=wolverine;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True"

@@ -1,6 +1,6 @@
 ﻿using System.Net.Mail;
 
-namespace OfferteTool;
+namespace OfferTool;
 
 public class MailService
 {
@@ -11,7 +11,7 @@ public class MailService
     public MailService(ILogger<MailService> logger)
     {
         _logger = logger;
-        _path = Path.Combine(Path.GetTempPath(), "OfferteTool", "Emails");
+        _path = Path.Combine(Path.GetTempPath(), "OfferTool", "Emails");
         
         Directory.CreateDirectory(_path);
         

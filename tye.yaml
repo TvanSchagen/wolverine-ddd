@@ -4,9 +4,9 @@
 # when you've given us a try, we'd love to know what you think:
 #    https://aka.ms/AA7q20u
 #
-name: offertetool
+name: offertool
 services:
-- name: offertetool
-  project: OfferteTool/OfferteTool.csproj
+- name: offertool
+  project: OfferTool/OfferTool.csproj
 - name: crmtool
   project: CrmTool/CrmTool.csproj

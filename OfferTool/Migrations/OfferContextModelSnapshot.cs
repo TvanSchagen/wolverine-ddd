@@ -3,14 +3,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using OfferteTool;
+using OfferTool;
 
 #nullable disable
 
-namespace OfferteTool.Migrations
+namespace OfferTool.Migrations
 {
-    [DbContext(typeof(OfferteContext))]
-    partial class OfferteContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(OfferContext))]
+    partial class OfferContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -21,19 +21,19 @@ namespace OfferteTool.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("OfferteTool.Offerte", b =>
+            modelBuilder.Entity("OfferTool.Offer", b =>
                 {
-                    b.Property<string>("Offertenummer")
+                    b.Property<string>("OfferNumber")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("RelatieEmail")
+                    b.Property<string>("EmailAddress")
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.HasKey("Offertenummer");
+                    b.HasKey("OfferNumber");
 
-                    b.ToTable("Offertes");
+                    b.ToTable("Offers");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,3 +1,3 @@
 ﻿namespace Contracts;
 
-public record OfferteCreatedIntegrationEvent(string Offertenummer, string RelatieEmail);
+public record OfferCreatedIntegrationEvent(string Offernummer, string EmailAddress);

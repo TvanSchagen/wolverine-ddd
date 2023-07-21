@@ -1,6 +1,6 @@
 using Contracts;
 using Microsoft.EntityFrameworkCore;
-using OfferteTool;
+using OfferTool;
 using Wolverine;
 using Wolverine.EntityFrameworkCore;
 using Wolverine.ErrorHandling;
@@ -36,8 +36,8 @@ builder.Host.UseWolverine(opts =>
             TimeSpan.FromSeconds(9),
             TimeSpan.FromSeconds(27));
     
-    opts.PublishMessage<OfferteCreatedIntegrationEvent>()
-        .ToRabbitExchange("offertes");
+    opts.PublishMessage<OfferCreatedIntegrationEvent>()
+        .ToRabbitExchange("offers");
 
     opts.UseRabbitMq().AutoProvision();
 });
@@ -46,7 +46,7 @@ builder.Services.AddSingleton<MailService>();
 
 builder.Services.AddProblemDetails();
 
-builder.Services.AddDbContextWithWolverineIntegration<OfferteContext>(opts => 
+builder.Services.AddDbContextWithWolverineIntegration<OfferContext>(opts => 
     opts.UseSqlServer(connectionString));
 
 var app = builder.Build();
@@ -61,7 +61,8 @@ app.MapGet("/", () => Results.Redirect("/swagger")).ExcludeFromDescription();
 app.MapWolverineEndpoints(opts =>
     opts.UseFluentValidationProblemDetailMiddleware());
 
-var context = app.Services.GetRequiredService<OfferteContext>();
+var context = app.Services.GetRequiredService<OfferContext>();
+await context.Database.EnsureCreatedAsync();
 await context.Database.MigrateAsync();
 
 await app.RunAsync();

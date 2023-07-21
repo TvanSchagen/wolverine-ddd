@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace OfferteTool.Migrations
+namespace OfferTool.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration
@@ -11,14 +11,15 @@ namespace OfferteTool.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Offertes",
+                name: "Offers",
                 columns: table => new
                 {
-                    Offertenummer = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    OfferNumber = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    EmailAddress = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Offertes", x => x.Offertenummer);
+                    table.PrimaryKey("PK_Offers", x => x.OfferNumber);
                 });
         }
 
@@ -26,7 +27,7 @@ namespace OfferteTool.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Offertes");
+                name: "Offers");
         }
     }
 }
