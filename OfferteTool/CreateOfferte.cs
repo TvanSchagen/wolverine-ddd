@@ -1,17 +1,10 @@
-using System.Net.Mail;
 using System.Security.Cryptography;
-using Contracts;
 using FluentValidation;
-using Wolverine;
 using Wolverine.Http;
 
 namespace OfferteTool;
 
 public record CreateOfferteCommand(string RelatieEmail);
-
-public record OfferteCreated(string Offertenummer, string RelatieEmail);
-
-public record OfferteReminder(string Offertenummer);
 
 public class CreateOfferteValidator : AbstractValidator<CreateOfferteCommand>
 {
@@ -32,17 +25,5 @@ public static class CreateOfferteEndpoint
         context.Offertes.Add(offerte);
         
         return new CreationResponse($"/offerte/{offertenummer}");
-    }
-}
-
-public static class OfferteCreatedHandler
-{
-    public static void Handle(OfferteAangemaakt message, MailService mailService, IMessageContext messageBus)
-    {
-        mailService.Send(new MailMessage(
-            "wolverine@local",
-            "t.van.schagen@surebusiness.nl",
-            "Nieuwe offerte aangemaakt", 
-            $"Er is een offerte aangemaakt met offertenummer {message.Offertenummer} voor relatie {message.RelatieEmail}."));
     }
 }
