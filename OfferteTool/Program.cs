@@ -27,6 +27,8 @@ builder.Host.UseWolverine(opts =>
 
     opts.Policies.AutoApplyTransactions();
     opts.Policies.UseDurableLocalQueues();
+    opts.Policies.UseDurableOutboxOnAllSendingEndpoints();
+    opts.Policies.UseDurableInboxOnAllListeners();
     
     opts.OnAnyException()
         .RetryWithCooldown(

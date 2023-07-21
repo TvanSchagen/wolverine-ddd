@@ -21,10 +21,9 @@ public class CreateOfferteValidator : AbstractValidator<CreateOfferteCommand>
 public static class CreateOfferteEndpoint
 {
     [WolverinePost("/offerte")]
-    public static (CreationResponse, OfferteCreated, OfferteCreatedIntegrationEvent) CreateOfferteHandler(
+    public static CreationResponse CreateOfferteHandler(
         CreateOfferteCommand command, 
-        OfferteContext context,
-        IMessageContext messaging)
+        OfferteContext context)
     {
         var rand = RandomNumberGenerator.GetInt32(1_000_000);
         var offertenummer = rand.ToString().PadLeft(6, '0');
@@ -32,17 +31,13 @@ public static class CreateOfferteEndpoint
         
         context.Offertes.Add(offerte);
         
-        return (
-            new CreationResponse($"/offerte/{offertenummer}"),
-            new OfferteCreated(offertenummer, offerte.RelatieEmail),
-            new OfferteCreatedIntegrationEvent(offertenummer, offerte.RelatieEmail)
-        );
+        return new CreationResponse($"/offerte/{offertenummer}");
     }
 }
 
 public static class OfferteCreatedHandler
 {
-    public static void Handle(OfferteCreated message, MailService mailService, IMessageContext messageBus)
+    public static void Handle(OfferteAangemaakt message, MailService mailService, IMessageContext messageBus)
     {
         mailService.Send(new MailMessage(
             "wolverine@local",
